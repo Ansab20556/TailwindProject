@@ -210,6 +210,41 @@
                 document.querySelector(".menu-items").classList.toggle("hidden")
                 document.querySelector(".menu-items").classList.add("mt-20")
             });
+
+        // =====================Verification ===============================
+            function validateForm() {
+                let isValid = true;
+
+                document.getElementById("nameError").innerText = "";
+                document.getElementById("emailError").innerText = "";
+                document.getElementById("messageError").innerText = "";
+
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const message = document.getElementById("message").value.trim();
+
+                if (name === "") {
+                document.getElementById("nameError").innerText = "الرجاء إدخال الاسم";
+                isValid = false;
+                }
+                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                if (email === "") {
+                document.getElementById("emailError").innerText = "الرجاء إدخال البريد الإلكتروني";
+                isValid = false;
+                } else if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerText = "البريد الإلكتروني غير صالح";
+                isValid = false;
+                }
+
+                if (message === "") {
+                document.getElementById("messageError").innerText = "الرجاء إدخال الرسالة";
+                isValid = false;
+                }
+
+                return isValid;
+            }
+
+
         </script>
 
     </body>
