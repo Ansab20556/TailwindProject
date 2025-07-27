@@ -77,10 +77,132 @@
                 </div>
             </a>
         </section>
-        <!-- Footer -->
-        <footer>
+        <!-- Contact Form -->
+        <section class="max-w-2xl mx-auto bg-white p-6 rounded shadow my-8 dark:bg-gray-800">
+            <h2 class="text-center text-2xl font-bold mb-4">تواصل معنا</h2>
+            <form onsubmit="return validateForm()" class="space-y-4">
+                <div>
+                    <label class="block font-bold mb-1">الاسم الكامل</label>
+                    <input type="text" id="name" class="w-full border border-gray-300 p-2 rounded" />
+                    <div id="nameError" class="text-red-500 text-sm"></div>
+                </div>
+                <div>
+                    <label class="block font-bold mb-1">البريد الإلكتروني</label>
+                    <input type="email" id="email" class="w-full border border-gray-300 p-2 rounded" />
+                    <div id="emailError" class="text-red-500 text-sm"></div>
+                </div>
+                <div>
+                    <label class="block font-bold mb-1">الرسالة</label>
+                    <textarea id="message" class="w-full border border-gray-300 p-2 rounded"></textarea>
+                    <div id="messageError" class="text-red-500 text-sm"></div>
+                </div>
+                <button type="submit" class="bg-[#007dbc] text-white px-6 py-2 rounded hover:bg-[#005f91]">إرسال</button>
+            </form>
+        </section>
 
+        <!-- Map -->
+        <section class="p-4">
+            <iframe src="https://www.google.com/maps/embed?..." class="w-full h-80 border-0" allowfullscreen loading="lazy"></iframe>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#002244] text-white py-12 px-4 font-[Cairo] text-center rtl">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-[#ffcc00]">المزيد من برنامج الأغذية العالمي</h2>
+            </div>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+                <div class="bg-[#003366] rounded-lg shadow-md p-4 transition-transform hover:-translate-y-1">
+                    <h2 class="text-[#ffcc00] text-lg mb-2">حالات الطوارئ</h2>
+                    <ul class="space-y-2">
+                        <li><a href="https://ar.wfp.org/emergencies/palestine-emergency" class="hover:text-[#ffcc00]">فلسطين</a></li>
+                        <li><a href="https://ar.wfp.org/emergencies/afghanistan-emergency" class="hover:text-[#ffcc00]">أفغانستان</a></li>
+                        <li><a href="https://ar.wfp.org/emergencies/ukraine-emergency" class="hover:text-[#ffcc00]">أوكرانيا</a></li>
+                        <li><a href="https://ar.wfp.org/emergencies/sudan-emergency" class="hover:text-[#ffcc00]">السودان</a></li>
+                        <li><a href="https://ar.wfp.org/emergencies/yemen-emergency" class="hover:text-[#ffcc00]">اليمن</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#003366] rounded-lg shadow-md p-4 transition-transform hover:-translate-y-1">
+                    <h2 class="text-[#ffcc00] text-lg mb-2">مناطق أخرى</h2>
+                    <ul class="space-y-2">
+                        <li><a href="https://ar.wfp.org/emergencies/syria-emergency" class="hover:text-[#ffcc00]">سوريا</a></li>
+                        <li><a href="https://ar.wfp.org/emergencies/lebanon" class="hover:text-[#ffcc00]">لبنان</a></li>
+                        <li><a href="https://ar.wfp.org/emergencies/nigeria-emergency" class="hover:text-[#ffcc00]">نيجيريا</a></li>
+                        <li><a href="https://ar.wfp.org/emergencies/haiti-emergency" class="hover:text-[#ffcc00]">هايتي</a></li>
+                        <li><a href="https://ar.wfp.org/emergencies/somalia-emergency" class="hover:text-[#ffcc00]">الصومال</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#003366] rounded-lg shadow-md p-4 transition-transform hover:-translate-y-1">
+                    <h2 class="text-[#ffcc00] text-lg mb-2"><a href="#">من نحن</a></h2>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-[#ffcc00]">استراتيجية البرنامج</a></li>
+                        <li><a href="#" class="hover:text-[#ffcc00]">القيادة</a></li>
+                        <li><a href="#" class="hover:text-[#ffcc00]">التمويل والجهات المانحة</a></li>
+                        <li><a href="#" class="hover:text-[#ffcc00]">تاريخ البرنامج</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#003366] rounded-lg shadow-md p-4 transition-transform hover:-translate-y-1">
+                    <h2 class="text-[#ffcc00] text-lg mb-2"><a href="#">عملنا</a></h2>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-[#ffcc00]">المساعدات النقدية والعينية</a></li>
+                        <li><a href="#" class="hover:text-[#ffcc00]">الإغاثة الطارئة</a></li>
+                        <li><a href="#" class="hover:text-[#ffcc00]">الدعم اللوجستي والإنساني</a></li>
+                        <li><a href="#" class="hover:text-[#ffcc00]">سلاسل الإمداد</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#003366] rounded-lg shadow-md p-4 transition-transform hover:-translate-y-1">
+                    <h2 class="text-[#ffcc00] text-lg mb-2"><a href="#">الموارد</a></h2>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-[#ffcc00]">الأخبار</a></li>
+                        <li><a href="#" class="hover:text-[#ffcc00]">القصص</a></li>
+                        <li><a href="#" class="hover:text-[#ffcc00]">المطبوعات</a></li>
+                        <li><a href="#" class="hover:text-[#ffcc00]">الفيديوهات</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#003366] rounded-lg shadow-md p-4 transition-transform hover:-translate-y-1">
+                    <h2 class="text-[#ffcc00] text-lg mb-2"><a href="#">شاركنا</a></h2>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-[#ffcc00]">فرص العمل</a></li>
+                        <li><a href="#" class="hover:text-[#ffcc00]">كن شريكاً</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 border-t border-white/20 mt-8">
+                <div>
+                    <img src="images/WFB-LOGO.jpeg" alt="شعار برنامج الأغذية العالمي" class="mx-auto w-48 h-auto">
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <ul class="flex flex-col items-center space-y-2 my-4">
+                        <li><a href="#" class="text-xl hover:text-[#ffcc00]"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="text-xl hover:text-[#ffcc00]"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="text-xl hover:text-[#ffcc00]"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" class="text-xl hover:text-[#ffcc00]"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#" class="text-xl hover:text-[#ffcc00]"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#" class="text-xl hover:text-[#ffcc00]"><i class="fab fa-tiktok"></i></a></li>
+                    </ul>
+                    <p class="text-sm space-x-2">
+                        <a href="#" class="hover:underline">إشعار الخصوصية</a>
+                        <span>|</span>
+                        <a href="#" class="hover:underline">الأحكام والشروط</a>
+                        <span>|</span>
+                        <a href="#" class="hover:underline">الأسئلة الشائعة</a>
+                    </p>
+                </div>
+
+                <div>
+                    <p>Via Cesare Giulio Viola, 68,<br>00148 Rome RM, Italy</p>
+                </div>
+            </div>
         </footer>
+
+
 
         <script src="scripts/script.js"></script>
         <script>
