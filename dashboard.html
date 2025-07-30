@@ -1,0 +1,172 @@
+    <!DOCTYPE html>
+    <html lang="ar" dir="rtl">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة التحكم | المنظمة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    @keyframes fadeInUp {
+        0% {
+        opacity: 0;
+        transform: translateY(20px);
+        }
+        100% {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+
+    .animate-fadeInUp {
+        animation: fadeInUp 0.6s ease-out both;
+    }
+
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    </style>
+
+    </head>
+    <body class="bg-gray-100 min-h-screen flex font-sans">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md h-screen p-4 hidden md:block">
+        <h2 class="text-2xl font-bold text-blue-800 mb-6">لوحة التحكم</h2>
+        <nav class="space-y-4">
+        <a href="#" class="block text-gray-700 hover:text-blue-600">الرئيسية</a>
+        <a href="#" class="block text-gray-700 hover:text-blue-600">إدارة المستخدمين</a>
+        <a href="#" class="block text-gray-700 hover:text-blue-600">المحتوى</a>
+        <a href="#" class="block text-gray-700 hover:text-blue-600">الإحصائيات</a>
+        <a href="#" class="block text-gray-700 hover:text-blue-600">الإعدادات</a>
+        </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex-1 p-6">
+        <header class="flex items-center justify-between mb-6">
+        <h1 class="text-2xl font-semibold text-gray-800">مرحبًا بك في لوحة التحكم</h1>
+        <button id="menuToggle" class="md:hidden bg-blue-600 text-white px-4 py-2 rounded">القائمة</button>
+        </header>
+
+        <!-- Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <div class="bg-blue-100 p-4 shadow rounded transform transition-transform duration-500 hover:scale-105 animate-fadeInUp">
+        <h3 class="text-lg font-semibold mb-2 text-blue-800">عدد المستخدمين</h3>
+        <p class="text-2xl font-bold text-blue-800">👤120</p>
+    </div>
+    <div class="bg-yellow-100 p-4 shadow rounded transform transition-transform duration-500 hover:scale-105 animate-fadeInUp delay-100">
+        <h3 class="text-lg font-semibold mb-2 text-yellow-800">عدد المقالات</h3>
+        <p class="text-2xl font-bold text-yellow-800">📰45</p>
+    </div>
+    <div class="bg-green-100 p-4 shadow rounded transform transition-transform duration-500 hover:scale-105 animate-fadeInUp delay-200">
+        <h3 class="text-lg font-semibold mb-2 text-green-800">الزوار اليوم</h3>
+        <p class="text-2xl font-bold text-green-800">👥321</p>
+    </div>
+    <div class="bg-red-100 p-4 shadow rounded transform transition-transform duration-500 hover:scale-105 animate-fadeInUp delay-300">
+        <h3 class="text-lg font-semibold mb-2 text-red-800">التبرعات</h3>
+        <p class="text-2xl font-bold text-red-800">💰8,200 ريال</p>
+    </div>
+    </section>
+
+
+        <!-- Chart & Table -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            <!-- Pie Chart -->
+            <div class="bg-white p-6 rounded shadow">
+                <h2 class="text-xl font-bold mb-4">نسبة التبرعات حسب الفئات</h2>
+                <canvas id="donationChart" width="400" height="400"></canvas>
+            </div>
+
+            <!-- Last Donors -->
+            <div class="bg-white p-6 rounded shadow overflow-auto">
+                <h2 class="text-xl font-bold mb-4">آخر المتبرعين</h2>
+                <table class="w-full text-right border-collapse">
+                <thead>
+                    <tr class="bg-gray-100 text-gray-600 text-sm">
+                    <th class="p-2">الاسم</th>
+                    <th class="p-2">المبلغ</th>
+                    <th class="p-2">التاريخ</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm text-gray-700">
+                    <tr class="border-t">
+                    <td class="p-2">أحمد سعيد</td>
+                    <td class="p-2">500 ريال</td>
+                    <td class="p-2">2025-07-29</td>
+                    </tr>
+                    <tr class="border-t">
+                    <td class="p-2">سارة ناصر</td>
+                    <td class="p-2">300 ريال</td>
+                    <td class="p-2">2025-07-28</td>
+                    </tr>
+                    <tr class="border-t">
+                    <td class="p-2">عبدالله علي</td>
+                    <td class="p-2">700 ريال</td>
+                    <td class="p-2">2025-07-27</td>
+                    </tr>
+                    <tr class="border-t">
+                    <td class="p-2">أنساب نائف </td>
+                    <td class="p-2">2000 ريال</td>
+                    <td class="p-2">2025-07-12</td>
+                    </tr>
+                    <tr class="border-t">
+                    <td class="p-2">عبدالله أنس </td>
+                    <td class="p-2">3000 ريال</td>
+                    <td class="p-2">2025-07-10</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Sidebar for mobile -->
+    <div id="mobileSidebar" class="fixed top-0 right-0 w-64 h-full bg-white shadow-md p-4 z-50 hidden md:hidden">
+        <button id="closeSidebar" class="mb-4 bg-red-500 text-white px-3 py-1 rounded">إغلاق</button>
+        <nav class="space-y-4">
+            <a href="#" class="block text-gray-700 hover:text-blue-600">الرئيسية</a>
+            <a href="#" class="block text-gray-700 hover:text-blue-600">إدارة المستخدمين</a>
+            <a href="#" class="block text-gray-700 hover:text-blue-600">المحتوى</a>
+            <a href="#" class="block text-gray-700 hover:text-blue-600">الإحصائيات</a>
+            <a href="#" class="block text-gray-700 hover:text-blue-600">الإعدادات</a>
+        </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        const toggleBtn = document.getElementById("menuToggle");
+        const sidebar = document.getElementById("mobileSidebar");
+        const closeSidebar = document.getElementById("closeSidebar");
+
+        toggleBtn.addEventListener("click", () => {
+        sidebar.classList.remove("hidden");
+        });
+
+        closeSidebar.addEventListener("click", () => {
+        sidebar.classList.add("hidden");
+        });
+
+        // Chart.js
+        const ctx = document.getElementById('donationChart').getContext('2d');
+        const donationChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['حالات الطوارئ', 'التغذية', 'الدعم اللوجستي', 'أخرى'],
+            datasets: [{
+            label: 'قيمة التبرعات',
+            data: [1200, 800, 900, 300],
+            backgroundColor: ['#007dbc', '#00bcd4', '#ffc107', '#ff5722'],
+            borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+        });
+    </script>
+
+    </body>
+    </html>
